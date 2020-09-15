@@ -1,0 +1,104 @@
+ <head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ </head>
+<body>
+  <div>
+  
+  <div class="total" *ngIf="clicked">
+    <h1>LOGIN</h1>
+   <form [formGroup]="loginForm" #formDir="ngForm"> 
+   <div [hidden]="formDir.submitted">
+
+      <div class="cross-validation" [class.cross-validation-error]="loginForm.errors?.identityRevealed && (loginForm.touched || loginForm.dirty)">
+        <div class="form-group">
+
+          <label for="email">Email</label><br>
+          <input type="email" id="email" class="form-control"
+                formControlName="emails" required>
+
+               <div *ngIf="emails.invalid && (emails.dirty || emails.touched)"
+               class="alert alert-danger">
+
+             <div class="alerts" *ngIf="emails.errors.required">
+              Email is required.
+              </div>
+              <div class="alerts" *ngIf="emails.errors.email">
+               please include an @ in email address.
+               </div>
+               </div>
+      
+     
+            <br>
+            <label>
+            Password:</label><br>
+            <input type="password" class="form-control" id="password" formControlName="pwd" required>
+            <div *ngIf="pwd.invalid && (pwd.dirty || pwd.touched)"
+              class="alert alert-danger">
+
+            <div class="alerts" *ngIf="pwd.errors.required">
+              password is required.
+            </div>
+          </div>
+   <br>
+   <button type="submit" [disabled]="loginForm.invalid" (click)="submission()">Login</button>
+  </div>
+    </div>
+      </div>
+ </form>
+ <a routerLink="/signup" routerLinkActive="active" (click)="change()">create a new account</a>
+  </div>
+  <div *ngIf="!clicked">
+  <router-outlet></router-outlet>
+  </div>
+  </div>
+
+<!-- <div class="container">
+
+  <h1>Reactive Form</h1>
+
+  <form [formGroup]="loginForm" #formDir="ngForm">
+
+    <div [hidden]="formDir.submitted">
+
+      <div class="cross-validation" [class.cross-validation-error]  ="loginForm.errors?.identityRevealed && (loginForm.touched ||   loginForm.dirty)">
+        <div class="form-group">
+
+          <label for="name">Email</label>
+          <input type="email"  class="form-control"
+                formControlName="name" required >
+
+          <div *ngIf="name.invalid && (name.dirty || name.touched)"
+              class="alert alert-danger">
+
+            <div *ngIf="name.errors.required">
+              Name is required.
+            </div>
+            <div *ngIf="name.errors.minlength">
+              Name must be at least 4 characters long.
+            </div>
+            <div *ngIf="name.errors.forbiddenName">
+              Name cannot be Bob.
+            </div>
+          </div>
+        </div>
+        <div *ngIf="loginForm.errors?.identityRevealed && (loginForm.touched || loginForm.dirty)" class="cross-validation-error-message alert alert-danger">
+            Name cannot match alter ego.
+        </div>
+      </div>
+       <label>
+   Password:
+    <input type="password" formControlName="pwd">
+  </label>
+
+  
+      <button type="submit" class="btn btn-default"
+             [disabled]="loginForm.invalid">Submit</button>
+      <a routerLink="/signup" routerLinkActive="active" (click)="change()">create a new account</a>
+    </div>
+  </form>
+</div> -->

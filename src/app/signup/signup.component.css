@@ -1,0 +1,48 @@
+form{
+ position:relative;
+ margin:10%;
+}
+
+input{
+
+  width:70%;
+  height:30px;
+  margin-left: 20px;  
+}
+label{
+font-size:25px;  
+font-style: bold;
+color:azure;
+}
+.total{
+  height:850px;
+  width:500px;
+position:relative;
+margin-left: 30%;
+margin-top: 5%;
+}
+h1{
+  text-align: center;
+  margin-top: 5%;
+  color:azure;
+}
+button{
+ background-color: green;
+ height:45px;
+ width:70px;
+ margin-left: 150px;
+ border-radius: 20%;
+}
+h2{
+  color:azure;
+}
+
+body{
+  height:1500px;
+  width:100%;
+border:1px solid red;
+  background-image: url('https://th.bing.com/th/id/OIP.3iMZ35PWPi0L15j_o7G2AQHaE7?pid=Api&rs=1://th.bing.com/th/id/OIP.yrIal44NFYJ5nJ9gD4RXHAHaFj?pid=Api&rs=1' );
+  background-repeat: repeat;
+  background-position-x: 50%;
+  background-attachment: scroll;
+}

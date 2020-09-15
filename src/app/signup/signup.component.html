@@ -1,0 +1,152 @@
+ <head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ </head>
+<body>
+  <h1>SIGN UP</h1>
+  <div class="total">
+    <div [hidden]="formDir.submitted">
+      <div class="cross-validation" [class.cross-validation-error]="signupForm.errors?.identityRevealed && (signupForm.touched || signupForm.dirty)">
+<form [formGroup]="signupForm" #formDir="ngForm" (ngSubmit)="change()"> 
+  <label>
+    First Name:</label>
+    <input type="text" class="form-control"  formControlName="firstName" required>
+    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+               class="alert alert-danger">
+
+             <div class="alerts" *ngIf="firstName.errors.required">
+              First name is required.
+              </div>
+              <div class="alerts" *ngIf="firstName.errors.maxlength">
+               First name doesnn't exceed 10 characters
+               </div>
+               </div>
+<br>
+   <label>
+    Middle Name:</label>
+    <input type="text" class="form-control" formControlName="middlename"> 
+    <div *ngIf="middlename.invalid && (middlename.dirty || middlename.touched)"
+               class="alert alert-danger">
+              <div class="alerts" *ngIf="middlename.errors.maxlength">
+               Middle name doesnn't exceed 10 characters
+               </div>
+               </div>
+    
+  
+<br>
+ <label>
+    Last Name:</label>
+    <input type="text" class="form-control" formControlName="lastName"> 
+    <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+               class="alert alert-danger">
+              <div class="alerts" *ngIf="lastName.errors.maxlength">
+               Middle name doesnn't exceed 10 characters
+               </div>
+               </div>
+    
+    
+<br>
+  <label>
+    Email:</label><br>
+    <input type="email" class="form-control" formControlName="emails" required>
+     <div *ngIf="emails.invalid && (emails.dirty || emails.touched)"
+               class="alert alert-danger">
+
+             <div class="alerts" *ngIf="emails.errors.required">
+              Email is required.
+              </div>
+              <div class="alerts" *ngIf="emails.errors.email">
+               please include an @ in email address.
+               </div>
+               </div>
+  
+  <label>
+    password: </label><br>
+    <input type="password" class="form-control" formControlName="password" required>
+    <div *ngIf="password.invalid && (password.dirty || password.touched)"
+               class="alert alert-danger">
+               <div class="alerts" *ngIf="password.errors.required">
+              Password is required.
+              </div>
+              <div class="alerts" *ngIf="password.errors.maxlength">
+               First name doesnn't exceed 12 characters
+               </div>
+               <div class="alerts" *ngIf="password.errors.minlength">
+               First name doesnn't below 8 characters
+               </div>
+               <div *ngIf="password.errors.pattern">
+				Password not valid.
+			</div> 
+               </div>
+  
+  <label>
+    D.O.B: </label><br>
+    <input type="date" class="form-control" formControlName="dob" required>
+    <div *ngIf="dob.invalid && (dob.dirty || dob.touched)"
+               class="alert alert-danger">
+
+             <div class="alerts" *ngIf="dob.errors.required">
+              D.O.B is required.
+              </div>
+    </div>
+  
+  
+<br>
+  <label>
+    Phone No:</label>
+    <input type="number" class="form-control" formControlName="phoneno">
+    <div *ngIf="phoneno.invalid && (phoneno.dirty || phoneno.touched)"
+               class="alert alert-danger">
+              <div class="alerts" *ngIf="phoneno.errors.pattern">
+               Invalid Mobile number
+               </div>
+               </div>
+\
+ 
+  <h2>Address</h2>
+   <label>
+     Hs.No:</label>
+    <input type="String" class="form-control" formControlName="hsno">
+    <div *ngIf="hsno.invalid && (hsno.dirty || hsno.touched)"
+               class="alert alert-danger" required>
+              <div class="alerts" *ngIf="hsno.errors.required">
+               This field is mandatory.
+               </div>
+               </div>
+      
+
+  <label>
+    Street: </label><br>
+    <input type="text" class="form-control" formControlName="street" required>
+    <div *ngIf="street.invalid && (street.dirty || street.touched)"
+               class="alert alert-danger" required>
+              <div class="alerts" *ngIf="street.errors.required">
+               This field is mandatory.
+               </div>
+               </div>
+   
+<br>
+  <label>
+    City:</label><br>
+    <input type="text" class="form-control" formControlName="city">
+  <br>
+  <label>
+    State:</label><br>
+    <input type="text" formControlName="state">
+  
+<br>
+  <label>
+    Zip Code:</label><br>
+    <input type="text" class="form-control" formControlName="pincode">
+
+<br>
+<button type="submit">SignUp</button>
+</form>
+</div>
+   </div>
+  </div>
+</body>

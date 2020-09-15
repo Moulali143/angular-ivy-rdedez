@@ -1,0 +1,61 @@
+.total{
+opacity:1; 
+  height:350px;
+  width:500px;
+position:relative;
+margin-left: 30%;
+margin-top: 5%;
+}
+form{
+ position:relative;
+ margin:10%;
+}
+label{
+font-size:25px;  
+font-style: bold;
+color:azure;
+ margin-left: 20px; 
+}
+input{
+
+  width:70%;
+  height:30px;
+  margin-left: 20px;  
+}
+button{
+ background-color: green;
+ height:45px;
+ width:70px;
+ margin-left: 150px;
+ border-radius: 20%;
+ margin-top: 10%;
+ color:azure;
+}
+a{
+  color:orange;
+  text-decoration:underline;
+  float:right;
+  margin-right: 2%;
+  margin-bottom: 10%;
+}
+h1{
+  text-align: center;
+  margin-top: 4%;
+  color:azure;
+}
+body{
+  height:600px;
+  width:100%;
+border:1px solid red;
+  background-image: url('https://th.bing.com/th/id/OIP.3iMZ35PWPi0L15j_o7G2AQHaE7?pid=Api&rs=1://th.bing.com/th/id/OIP.yrIal44NFYJ5nJ9gD4RXHAHaFj?pid=Api&rs=1' );
+  background-repeat: repeat;
+  background-position-x: 50%;
+  background-attachment: scroll;
+}
+.cross-validation-error input {
+  border-left: 5px solid red;
+}
+
+img{
+  height:100px;
+}
